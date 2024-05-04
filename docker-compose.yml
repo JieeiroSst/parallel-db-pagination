@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+    postgres_db:
+        image: postgres:13.5
+        container_name: PostgresCount
+        restart: always
+        environment:
+            - POSTGRES_USER=hoadev
+            - POSTGRES_PASSWORD=hoadev123
+            - POSTGRES_DB=hoadev_db
+        volumes:
+            - postgres_db:/var/lib/postgresql/data
+        ports:
+            - '5433:5432'
+volumes:
+    postgres_db:
+        driver: local
